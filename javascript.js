@@ -21,7 +21,7 @@ function newGrid(gridSize){
             newButton.style.flex = "1 1 0";
             newButton.style.minWidth = "0";
             newButton.addEventListener("mouseover", function (e) {
-                e.target.style.background = "blue";
+                e.target.style.background = "rgb(" + getRandomInt(1,255) +"," + getRandomInt(1,255) + "," + getRandomInt(1,255) + ")";
             });
             rowContainer.appendChild(newButton);
         }
@@ -33,4 +33,10 @@ function gridPrompt(){
     let gridSize = prompt("How many cells per side in new grid?");
     document.getElementById("container").innerHTML = "";
     newGrid(gridSize);
+}
+
+function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
