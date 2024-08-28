@@ -20,7 +20,10 @@ function newGrid(gridSize){
             newButton.style.alignSelf = "stretch";
             newButton.style.flex = "1 1 0";
             newButton.style.minWidth = "0";
+            newButton.style.opacity = "0";
+            newButton.style.borderWidth = "1px";
             newButton.addEventListener("mouseover", function (e) {
+                e.target.style.opacity = parseFloat(e.target.style.opacity) + 0.1;
                 e.target.style.background = "rgb(" + getRandomInt(1,255) +"," + getRandomInt(1,255) + "," + getRandomInt(1,255) + ")";
             });
             rowContainer.appendChild(newButton);
